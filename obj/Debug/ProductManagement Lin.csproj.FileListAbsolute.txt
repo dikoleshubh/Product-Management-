@@ -1,0 +1,7 @@
+C:\Users\Admin\source\repos\ProductManagement Lin\bin\Debug\ProductManagement Lin.exe.config
+C:\Users\Admin\source\repos\ProductManagement Lin\bin\Debug\ProductManagement Lin.exe
+C:\Users\Admin\source\repos\ProductManagement Lin\bin\Debug\ProductManagement Lin.pdb
+C:\Users\Admin\source\repos\ProductManagement Lin\obj\Debug\ProductManagement Lin.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\ProductManagement Lin\obj\Debug\ProductManagement Lin.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\ProductManagement Lin\obj\Debug\ProductManagement Lin.exe
+C:\Users\Admin\source\repos\ProductManagement Lin\obj\Debug\ProductManagement Lin.pdb
