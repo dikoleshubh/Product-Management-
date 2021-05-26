@@ -21,6 +21,15 @@ namespace ProductManagement_Lin
                 new ProductReview(){ ProductID = 5, UserID = 5, Rating = 5, Review = "Good", isLike = true},
                
             };
+            foreach (var list in productReviewList)
+            {
+                Console.WriteLine("\n-----------------");
+                Console.Write("\nProductID " + list.ProductID + "\nUserID " + list.UserID + "\nRating " + list.Rating + "\nReview " + list.Review + "\nisLike " + list.isLike);
+                Console.WriteLine("\n-----------------");
+            }
+
+            ProductReviewManagement management = new ProductReviewManagement();
+            management.TopRecords(productReviewList);
 
         }
     }
