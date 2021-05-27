@@ -48,6 +48,8 @@ namespace ProductManagement_Lin
             reviewDataTable.DisplayDataTableRecordsWithIsLikeValueTrue(table);
             reviewDataTable.FindAverageRatingOfEachProductID(table);
             reviewDataTable.RetrievRecordsWhoseReviewIsNice(table);
+            Console.ReadKEy();
+            
         }
     }
     
