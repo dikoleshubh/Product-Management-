@@ -14,11 +14,11 @@ namespace ProductManagement_Lin
             DataTable table = new DataTable();
             table.Columns.AddRange(new[]  
                 {                               //COLUMN NAMING
-                    new DataColumn("ProductID"),
-                    new DataColumn("UserID"),
-                    new DataColumn("Rating"),
-                    new DataColumn("Review"),
-                    new DataColumn("isLike")
+                    new DataColumn("ProductID", typeof(int)),
+                    new DataColumn("UserID", typeof(int)),
+                    new DataColumn("Rating", typeof(float)),
+                    new DataColumn("Review",typeof(string)),
+                    new DataColumn("isLike", typeof(bool))
                 }
             );
             table.Rows.Add("1", "1", "5", "Good", "true");
@@ -57,7 +57,7 @@ namespace ProductManagement_Lin
                           .Select(x => new
                           {
                               ProductID = x.Key,
-                              Average = x.Average(z => z.Field<float>("Rating"))
+                              Average = x.Average<DataRow>(z=>z.Field<float>("Rating"))
                           }).ToList();
             Console.WriteLine("\nList of Average Rating For Given Each Product ID");
             foreach (var row in records)
