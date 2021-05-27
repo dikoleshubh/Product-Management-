@@ -32,11 +32,11 @@ namespace ProductManagement_Lin
                 Console.Write("\nProductID " + list.ProductID + "\nUserID " + list.UserID + "\nRating " + list.Rating + "\nReview " + list.Review + "\nisLike " + list.isLike);
                 Console.WriteLine("\n-----------------");
             }
-
             ProductReviewManagement management = new ProductReviewManagement();
             management.TopRecords(productReviewList);
             management.SelectedRecords(productReviewList);
-            management.RetrieveOfRecords(productReviewList);
+            management.RetrieveCountOfRecords(productReviewList);
+            management.RetrieveProductIDAndReviewFromList(productReviewList);
 
         }
     }
