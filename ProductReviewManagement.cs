@@ -8,15 +8,6 @@ namespace ProductManagement_Lin
 {
     class ProductReviewManagement
     {
-        public void DisplayRecords(List<ProductReview> records)
-        {
-            foreach (var list in records)
-            {
-                Console.WriteLine("\n-----------------");
-                Console.Write("\nProductID " + list.ProductID + "\nUserID " + list.UserID + "\nRating " + list.Rating + "\nReview " + list.Review + "\nisLike " + list.isLike);
-                Console.WriteLine("\n-----------------");
-            }
-        }
         public void TopRecords(List<ProductReview> listProductReview)
         {
             var recordData = (from productReviews in listProductReview
@@ -55,7 +46,7 @@ namespace ProductManagement_Lin
             }
             Console.WriteLine("\n*");
         }
-        /// Method to retrieve only Product ID and Review of Product
+        /// Retrieve only Product ID and Review of Product
         public void RetrieveProductIDAndReviewFromList(List<ProductReview> listProductReview)
         {
             var recordData = listProductReview.Select(x => new { ProductID = x.ProductID, ProductReview = x.Review });
@@ -66,6 +57,24 @@ namespace ProductManagement_Lin
                 Console.WriteLine("ProductID : " + records.ProductID + "\tProduct Review : " + records.ProductReview);
             }
             Console.WriteLine("\n*");
+        }
+        /// Skip First Records and Display other records
+        public void DisplayUnskippedRecords(List<ProductReview> listProductReview)
+        {
+            var recordData = (from productReviews in listProductReview
+                              select productReviews).Skip(5).ToList();
+            Console.WriteLine("\nFollowing is List of records after skiping first 5 records");
+            DisplayRecords(recordData);
+        }
+       
+        public void DisplayRecords(List<ProductReview> records)
+        { //Display respective records
+            foreach (var list in records)
+            {
+                Console.WriteLine("\n-----------------");
+                Console.Write("\nProductID " + list.ProductID + "\nUserID " + list.UserID + "\nRating " + list.Rating + "\nReview " + list.Review + "\nisLike " + list.isLike);
+                Console.WriteLine("\n-----------------");
+            }
         }
     }
 }

@@ -26,17 +26,19 @@ namespace ProductManagement_Lin
                 new ProductReview(){ ProductID = 10, UserID = 10, Rating = 4.7, Review = "Good", isLike=true },
 
             };
-            foreach (var list in productReviewList)
+            foreach (var list in productReviewList) //Displaying All records
             {
                 Console.WriteLine("\n-----------------");
                 Console.Write("\nProductID " + list.ProductID + "\nUserID " + list.UserID + "\nRating " + list.Rating + "\nReview " + list.Review + "\nisLike " + list.isLike);
                 Console.WriteLine("\n-----------------");
             }
+            //Object has been created
             ProductReviewManagement management = new ProductReviewManagement();
             management.TopRecords(productReviewList);
             management.SelectedRecords(productReviewList);
             management.RetrieveCountOfRecords(productReviewList);
             management.RetrieveProductIDAndReviewFromList(productReviewList);
+            management.DisplayUnskippedRecords(productReviewList);
 
         }
     }
