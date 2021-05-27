@@ -43,11 +43,12 @@ namespace ProductManagement_Lin
 
             //DATA TABLE OPERATIONS
             Console.WriteLine("\nDataTable Operations");
-            ProductDataTable reviewDataTable = new ProductDataTable();
-            DataTable table = reviewDataTable.CreateDataBleAndAddDefaultValues();
-            reviewDataTable.DisplayDataTableRecordsWithIsLikeValueTrue(table);
-            reviewDataTable.FindAverageRatingOfEachProductID(table);
-            reviewDataTable.RetrievRecordsWhoseReviewIsNice(table);
+            ProductDataTable reviewDataTable = new ProductDataTable(); //OBJECT CREATION
+            DataTable table = reviewDataTable.CreateDataBleAndAddDefaultValues();//UC-7
+            reviewDataTable.DisplayDataTableRecordsWithIsLikeValueTrue(table);//UC-08
+            reviewDataTable.FindAverageRatingOfEachProductID(table);//UC-09
+            reviewDataTable.RetrievRecordsWhoseReviewIsNice(table);//UC-10
+            reviewDataTable.RetrievRecordsOfPerticularUserID(table); //UC-11
         }
     }
     

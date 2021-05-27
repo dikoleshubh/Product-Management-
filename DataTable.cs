@@ -80,5 +80,18 @@ namespace ProductManagement_Lin
                
             }
         }
+        // Retrieve DataTable records who's UserID is 10, order by rating
+        public void RetrievRecordsOfPerticularUserID(DataTable table)
+        {
+            var records = table.Rows.Cast<DataRow>()
+                          .OrderBy(x => x.Field<float>("Rating"))
+                          .Where(x => x["UserID"].Equals(10));
+            Console.WriteLine("\nList Of Products whose UserID is 10");
+            foreach (var row in records)
+            {
+                Console.Write("\nProductID : " + row.Field<int>("ProductID") + " " + "\nUserID : " + row.Field<int>("UserID") + " " + "\nRating : " + row.Field<float>("Rating") + " " + "\nReview : " + row.Field<string>("Review") + " " + "\nisLike : " + row.Field<bool>("isLike") + " ");
+                
+            }
+        }
     }   
 }
