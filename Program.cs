@@ -35,6 +35,8 @@ namespace ProductManagement_Lin
 
             ProductReviewManagement management = new ProductReviewManagement();
             management.TopRecords(productReviewList);
+            management.SelectedRecords(productReviewList);
+            management.RetrieveOfRecords(productReviewList);
 
         }
     }
