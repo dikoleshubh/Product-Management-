@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,6 +40,12 @@ namespace ProductManagement_Lin
             management.RetrieveCountOfRecords(productReviewList);
             management.RetrieveProductIDAndReviewFromList(productReviewList);
             management.DisplayUnskippedRecords(productReviewList);
+
+            //DATA TABLE OPERATIONS
+            Console.WriteLine("\nDataTable Operations");
+            ProductDataTable reviewDataTable = new ProductDataTable();
+            DataTable table = reviewDataTable.CreateDataBleAndAddDefaultValues();
+            reviewDataTable.DisplayDataTableRecordsWithIsLikeValueTrue(table);
 
         }
     }
