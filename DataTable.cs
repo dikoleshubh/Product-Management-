@@ -34,15 +34,36 @@ namespace ProductManagement_Lin
             return table;
 
         }
-        public void DisplayDataTableRecordsWithIsLikeValueTrue(DataTable table)
+        //public void DisplayDataTableRecordsWithIsLikeValueTrue(DataTable table)
+        //{
+        //    var records = table.Rows.Cast<DataRow>()
+        //                  .Where(x => x["isLike"].Equals(true)); //SPECIFIC DATA DISPLAY
+        //    Console.WriteLine("\nList Of records whose isLike value is True");
+        //    foreach (var row in records)
+        //    {
+               
+        //        Console.Write("\nProductID : " + row.Field<int>("ProductID") + " " + "\nUserID : " + row.Field<int>("UserID") + " " + "\nRating : " + row.Field<float>("Rating") + " " + "\nReview : " + row.Field<string>("Review") + " " + "\nisLike : " + row.Field<bool>("isLike") + " ");
+               
+        //    }
+        //}
+        /// <summary>
+        /// Average Rating
+        /// </summary>
+        /// <param name="table"></param>
+        public void FindAverageRatingOfEachProductID(DataTable table)
         {
             var records = table.Rows.Cast<DataRow>()
-                          .Where(x => x["isLike"].Equals(true)); //SPECIFIC DATA DISPLAY
-            Console.WriteLine("\nList Of records whose isLike value is True");
+                          .GroupBy(x => x.Field<int>("ProductID"))
+                          .Select(x => new
+                          {
+                              ProductID = x.Key,
+                              Average = x.Average(z => z.Field<float>("Rating"))
+                          }).ToList();
+            Console.WriteLine("\nList of Average Rating For Given Each Product ID");
             foreach (var row in records)
             {
-               
-                Console.Write("\nProductID : " + row.Field<int>("ProductID") + " " + "\nUserID : " + row.Field<int>("UserID") + " " + "\nRating : " + row.Field<float>("Rating") + " " + "\nReview : " + row.Field<string>("Review") + " " + "\nisLike : " + row.Field<bool>("isLike") + " ");
+                Console.WriteLine("\n-----------------");
+                Console.Write("\nProductID : " + row.ProductID + " " + "\nAverage Rating : " + row.Average);
                
             }
         }

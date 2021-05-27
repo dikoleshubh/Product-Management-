@@ -46,7 +46,7 @@ namespace ProductManagement_Lin
             ProductDataTable reviewDataTable = new ProductDataTable();
             DataTable table = reviewDataTable.CreateDataBleAndAddDefaultValues();
             reviewDataTable.DisplayDataTableRecordsWithIsLikeValueTrue(table);
-
+            reviewDataTable.FindAverageRatingOfEachProductID(table);
         }
     }
     
