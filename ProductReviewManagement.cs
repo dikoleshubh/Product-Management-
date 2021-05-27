@@ -71,9 +71,9 @@ namespace ProductManagement_Lin
         { //Display respective records
             foreach (var list in records)
             {
-                Console.WriteLine("\n-----------------");
+                
                 Console.Write("\nProductID " + list.ProductID + "\nUserID " + list.UserID + "\nRating " + list.Rating + "\nReview " + list.Review + "\nisLike " + list.isLike);
-                Console.WriteLine("\n-----------------");
+
             }
         }
     }
