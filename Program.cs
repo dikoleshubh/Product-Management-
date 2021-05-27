@@ -19,7 +19,12 @@ namespace ProductManagement_Lin
                 new ProductReview(){ ProductID = 3, UserID = 3, Rating = 4, Review = "Good", isLike = true},
                 new ProductReview(){ ProductID = 4, UserID = 4, Rating = 1, Review = "Not Good", isLike = false},
                 new ProductReview(){ ProductID = 5, UserID = 5, Rating = 5, Review = "Good", isLike = true},
-               
+                new ProductReview(){ ProductID = 6, UserID = 6, Rating = 5, Review = "Good", isLike = true},
+                new ProductReview(){ ProductID = 7, UserID = 7, Rating = 8, Review = "Nice", isLike = true},
+                new ProductReview(){ ProductID = 8, UserID = 8, Rating = 7, Review = "Good", isLike = true},
+                new ProductReview(){ ProductID = 9, UserID = 9, Rating = 10, Review = "Nice", isLike = true},
+                new ProductReview(){ ProductID = 10, UserID = 10, Rating = 4.7, Review = "Good", isLike=true },
+
             };
             foreach (var list in productReviewList)
             {
