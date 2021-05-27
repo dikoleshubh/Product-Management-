@@ -34,18 +34,18 @@ namespace ProductManagement_Lin
             return table;
 
         }
-        //public void DisplayDataTableRecordsWithIsLikeValueTrue(DataTable table)
-        //{
-        //    var records = table.Rows.Cast<DataRow>()
-        //                  .Where(x => x["isLike"].Equals(true)); //SPECIFIC DATA DISPLAY
-        //    Console.WriteLine("\nList Of records whose isLike value is True");
-        //    foreach (var row in records)
-        //    {
-               
-        //        Console.Write("\nProductID : " + row.Field<int>("ProductID") + " " + "\nUserID : " + row.Field<int>("UserID") + " " + "\nRating : " + row.Field<float>("Rating") + " " + "\nReview : " + row.Field<string>("Review") + " " + "\nisLike : " + row.Field<bool>("isLike") + " ");
-               
-        //    }
-        //}
+        public void DisplayDataTableRecordsWithIsLikeValueTrue(DataTable table)
+        {
+            var records = table.Rows.Cast<DataRow>()
+                          .Where(x => x["isLike"].Equals(true)); //SPECIFIC DATA DISPLAY
+            Console.WriteLine("\nList Of records whose isLike value is True");
+            foreach (var row in records)
+            {
+
+                Console.Write("\nProductID : " + row.Field<int>("ProductID") + " " + "\nUserID : " + row.Field<int>("UserID") + " " + "\nRating : " + row.Field<float>("Rating") + " " + "\nReview : " + row.Field<string>("Review") + " " + "\nisLike : " + row.Field<bool>("isLike") + " ");
+
+            }
+        }
         /// <summary>
         /// Average Rating
         /// </summary>
@@ -64,6 +64,19 @@ namespace ProductManagement_Lin
             {
                 Console.WriteLine("\n-----------------");
                 Console.Write("\nProductID : " + row.ProductID + " " + "\nAverage Rating : " + row.Average);
+               
+            }
+        }
+        // Retrieve DataTable records who's Review is Nice
+        public void RetrievRecordsWhoseReviewIsNice(DataTable table)
+        {
+            var records = table.Rows.Cast<DataRow>()
+                          .Where(x => x["Review"].Equals("Nice"));
+            Console.WriteLine("\nList Of Products whose Review is Nice");
+            foreach (var row in records)
+            {
+             
+                Console.Write("\nProductID : " + row.Field<int>("ProductID") + " " + "\nUserID : " + row.Field<int>("UserID") + " " + "\nRating : " + row.Field<float>("Rating") + " " + "\nReview : " + row.Field<string>("Review") + " " + "\nisLike : " + row.Field<bool>("isLike") + " ");
                
             }
         }
