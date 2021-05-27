@@ -49,6 +49,7 @@ namespace ProductManagement_Lin
             reviewDataTable.FindAverageRatingOfEachProductID(table);//UC-09
             reviewDataTable.RetrievRecordsWhoseReviewIsNice(table);//UC-10
             reviewDataTable.RetrievRecordsOfPerticularUserID(table); //UC-11
+            Console.ReadKey();
         }
     }
     
