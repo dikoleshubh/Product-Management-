@@ -14,11 +14,11 @@ namespace ProductManagement_Lin
             DataTable table = new DataTable();
             table.Columns.AddRange(new[]  
                 {                               //COLUMN NAMING
-                    new DataColumn("ProductID"),
-                    new DataColumn("UserID"),
-                    new DataColumn("Rating"),
-                    new DataColumn("Review"),
-                    new DataColumn("isLike")
+                   table.Columns.Add("ProductId", typeof(Int32));
+                   table.Columns.Add("UserId", typeof(Int32));
+                   table.Columns.Add("Rating", typeof(double));
+                   table.Columns.Add("Review", typeof(string));
+                   table.Columns.Add("IsLike", typeof(bool));
                 }
             );
             table.Rows.Add("1", "1", "5", "Good", "true");
